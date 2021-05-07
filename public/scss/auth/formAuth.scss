@@ -1,0 +1,50 @@
+.authentication-wrapper{
+    .form-area{
+        width: 550px;
+        margin: 0 auto;
+        overflow: hidden;
+        .slide-form{
+            display: inline-flex;
+            transition: 0.4s ease-in-out;
+            .formAuth {
+                margin: 0 auto;
+                width: 550px;
+                flex: none;
+                padding: 15px 20px;
+                border-radius: 7px;
+                border: 1px solid gray;
+                box-shadow: 0px 0px black;
+                h1{
+                    margin-bottom: 15px;
+                    background: linear-gradient(to right, rgb(227, 172, 73), rgba(221, 122, 181, 0.82));
+                    border-radius: 9999px;
+                }
+                label{
+                    white-space: nowrap;
+                    width: 23%;
+                    font-weight: bold;
+                }
+                .btn{
+                    cursor: pointer;
+                    outline: none !important;
+                }
+                .nextForm{                  
+                    cursor: pointer;
+                    color: gray;
+                    margin-left:5px;
+                    &:hover{
+                       color: skyblue;
+                       text-decoration: underline;
+                       font-weight: bold;
+                   }
+                }
+                &#formLogin{
+                    height: 230px;
+                }
+                &#formSignup{
+                    
+                }
+            }
+        }
+    }
+}

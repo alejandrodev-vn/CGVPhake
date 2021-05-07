@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chỉnh sửa phim</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="../../../admin/css/main.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="dashboard">
+            <div class="left">
+                <span class="left__icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+                <div class="left__content">
+                    <div class="left__logo"><a href="/admin"><img src="../../../images/logo/cgvlogo.png" width="70px" alt="logo"></a></div>
+                    <div class="left__profile">
+                        <div class="left__image"><img src="../../../admin/assets/me.jpg" style="object-fit:cover" alt="avatar"></div>
+                        <p class="left__name">LV</p>
+                    </div>
+                    <ul class="left__menu">
+                        <li class="left__menuItem">
+                            <a href="/admin" class="left__title"><img src="../../../admin/assets/icon-dashboard.svg" alt="">New Bill</a>
+                        </li>
+                        <li class="left__menuItem">
+                            <div class="left__title"><img src="../../../admin/assets/icon-tag.svg" alt="">Phim<img class="left__iconDown" src="../../../admin/assets/arrow-down.svg" alt=""></div>
+                            <div class="left__text">
+                                <a class="left__link"  href="/admin/movie/new-movie">Thêm mới</a>
+                                <a class="left__link"  href="/admin/movie">Danh sách</a>
+                            </div>
+                        </li>
+                        <li class="left__menuItem">
+                            <div class="left__title"><img src="../../../admin/assets/icon-edit.svg" alt="">Thể loại<img class="left__iconDown" src="../../../admin/assets/arrow-down.svg" alt=""></div>
+                            <div class="left__text">                                   
+                                <a class="left__link" href="/admin/category/new-category">Thêm mới</a>
+                                <a class="left__link" href="/admin/category">Danh sách</a>
+                            </div>
+                        </li>
+                        <li class="left__menuItem">
+                            <div class="left__title"><img src="../../../admin/assets/icon-book.svg" alt="">Khu vực<img class="left__iconDown" src="../../../admin/assets/arrow-down.svg" alt=""></div>
+                            <div class="left__text">
+                                <a class="left__link" href="/admin/area/new-area">Thêm mới</a>
+                                <a class="left__link" href="/admin/area">Danh sách</a>
+                            </div>
+                        </li>
+                        <li class="left__menuItem">
+                            <div class="left__title"><img src="../../../admin/assets/icon-book.svg" alt="">Rạp<img class="left__iconDown" src="../../../admin/assets/arrow-down.svg" alt=""></div>
+                            <div class="left__text">
+                                <a class="left__link" href="/admin/cinema/new-cinema">Thêm mới</a>
+                                <a class="left__link" href="/admin/cinema">Danh sách</a>
+                            </div>
+                        </li>
+                        <li class="left__menuItem">
+                            <div class="left__title"><img src="../../../admin/assets/icon-settings.svg" alt="">Phòng<img class="left__iconDown" src="../../../admin/assets/arrow-down.svg" alt=""></div>
+                            <div class="left__text">
+                                <a class="left__link" href="/admin/room/new-room">Thêm mới</a>
+                                <a class="left__link" href="/admin/room">Danh sách</a>
+                            </div>
+                        </li>
+                        <li class="left__menuItem">
+                            <div class="left__title"><img src="../../../admin/assets/icon-settings.svg" alt="">Suất chiếu<img class="left__iconDown" src="../../../admin/assets/arrow-down.svg" alt=""></div>
+                            <div class="left__text">
+                                <a class="left__link" href="/admin/movie-showing/new-movie-showing">Thêm mới</a>
+                                <a class="left__link" href="/admin/movie-showing">Danh sách</a>
+                            </div>
+                        </li>
+            
+                        <li class="left__menuItem">
+                            <a href="/admin/user" class="left__title"><img src="../../../admin/assets/icon-users.svg" alt="">Khách hàng</a>
+                        </li>
+                        <li class="left__menuItem">
+                            <a href="/admin/bill" class="left__title"><img src="../../../admin/assets/icon-book.svg" alt="">Hóa đơn</a>
+                        </li>
+                        <li class="left__menuItem">
+                            <a href="/" class="left__title"><img src="../../../admin/assets/icon-logout.svg" alt="">Logout</a>
+                        </li>
+            
+                    </ul>
+                </div>
+            </div>
+            <div class="right">
+                <div class="right__content">
+                    <div class="right__title">DASHBOARD</div>
+                    <div class="right__cards">
+                        <a class="right__card" href="?act=products">
+                            <div class="right__cardTitle">Products</div>
+                            <div class="right__cardNumber">20</div>
+                            <div class="right__cardDesc">See more <img src="../../../admin/assets/arrow-right.svg" alt=""></div>
+                        </a>
+                        <a class="right__card" href="?act=user">
+                            <div class="right__cardTitle">User</div>
+                            <div class="right__cardNumber">20</div>
+                            <div class="right__cardDesc">See more <img src="../../../admin/assets/arrow-right.svg" alt=""></div>
+                        </a>
+                        <a class="right__card" href="?act=category">
+                            <div class="right__cardTitle">Category</div>
+                            <div class="right__cardNumber">20</div>
+                            <div class="right__cardDesc">See more <img src="../../../admin/assets/arrow-right.svg" alt=""></div>
+                        </a>
+                        <a class="right__card" href="?act=bill">
+                            <div class="right__cardTitle">Bill</div>
+                            <div class="right__cardNumber">20</div>
+                            <div class="right__cardDesc">See more <img src="../../../admin/assets/arrow-right.svg" alt=""></div>
+                        </a>
+                    </div>
+                    <div class="right__table" id="content">
+                        <p class="right__tableTitle">Products list</p>
+                        <div class="right__tableWrapper">
+                            <div class="container">
+                                <h2>Chỉnh sửa phim: <%= movie.title %> </h2>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <form action="<%= movie.id %>" method="POST" enctype="multipart/form-data">
+                                            <div class="form-group">
+                                                <label class="input-group-text col-md-2"><span style="color: red;">*</span> Tên Phim: </label>
+                                                <input type="text" name="title" class="form-control" value="<%= movie.title %> ">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="input-group-text col-md-2"><span style="color: red;">*</span>Diễn viên: </label>
+                                                <input type="text" name="actors" class="form-control" value="<%= movie.actors %> ">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="input-group-text col-md-2"><span style="color: red;">*</span>Đạo diễn: </label>
+                                                <input type="text" name="directors" class="form-control" value="<%= movie.directors %> ">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="input-group-text col-md-2"><span style="color: red;">*</span>Ngày khởi chiếu: </label>
+                                                <input type="date" value="<%= premiere%>" name="premiere" class="form-control" >
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="input-group-text col-md-2"><span style="color: red;">*</span>Thời lượng phim (phút): </label>
+                                                <input type="text" name="time" class="form-control" value="<%= movie.time %> ">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="input-group-text col-md-2"><span style="color: red;">*</span>Description: </label>
+                                                <textarea type="text" name="description" class="form-control" cols="50" rows="5" ><%= movie.description %></textarea>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="input-group-text col-md-2"><span style="color: red;">*</span>Poster Phim: </label>
+                                                <div class="poster-edit">
+                                                    <img src="../../../images/movies/<%= movie.imageUrl %> " alt="poster-movie">
+                                                </div>
+                                                <input type="file" name="imageUrl" class="form-control" multiple accept="image/png, .jpeg, .jpg, image/gif">
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="input-group-text col-md-2">Trạng thái: </label>
+                                                <select name="showhide">
+                                                    <option value="1" <%= (movie.showhide) ? 'selected':'' %> >Còn chiếu</option>
+                                                    <option value="0" <%= (movie.showhide==0) ? 'selected':'' %> >Ngưng chiếu</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="input-group-text col-md-2">Độ tuổi: </label>
+                                                <select name="ageAllowed">
+                                                    <option value="All - Không giới hạn tuổi">Không giới hạn</option>
+                                                    <option value="C13 - Cấm dưới 13 tuổi">Cấm dưới 13</option>
+                                                    <option value="C16 - Cấm dưới 16 tuổi">Cấm dưới 16</option>
+                                                    <option value="C18 - Cấm dưới 18 tuổi">Cấm dưới 18</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="input-group-text col-md-2">Thể loại: </label>
+                                                <% for(let category of categories){ %>
+                                                    <label for="<%= category.value %>" class="text-checkbox <%= movie.categories.includes(category.value) ? "active" : "" %> "><%= category.title %> </label><input type="checkbox" <%= movie.categories.includes(category.value) ? "checked" : "" %> name="categories" id="<%= category.value %>" value="<%= category.value %>">
+                                                <% } %> 
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="input-group-text col-md-2">Quốc gia, ngôn ngữ: </label>
+                                                <input type="text" name="languages" class="form-control" value="<%= movie.languages %>">
+                                            </div>
+                                            <small>Chú thích: (<span style="color: red;">*</span>) là bắt buộc</small>
+                                            <button type="submit" class="btn-submit">Hoàn tất chỉnh sửa</button>
+                                            <input type="hidden" name="id" value="<%= movie.id %>">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                            <!---->
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../../admin/js/main.js"></script>
+</body>
+</html>

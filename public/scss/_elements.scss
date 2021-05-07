@@ -1,0 +1,102 @@
+.text-center{
+    text-align: center;
+}
+.relative{
+    position: relative !important;
+}
+section{
+    min-height: 450px;
+    @media #{$sm} {
+        min-height: 300px;
+    }
+}
+.form-group {
+    margin-bottom: 1rem;
+    display: flex;
+}
+.form-control{
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    &:focus{
+        color: #495057;
+        background-color: #fff;
+        border-color: #80bdff;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    }
+}
+.input-group-text {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: .375rem .75rem;
+    margin-bottom: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #eeeeee;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+}
+select{
+    display: inline-block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem 1.75rem .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    vertical-align: middle;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+label.text-checkbox {
+    padding: 7px ;
+    margin: 0 5px;
+    background: white;
+    border-radius: 5px;
+    border: 1px solid rgb(121, 121, 121);
+    cursor: pointer;
+    &.active{
+        padding: 7px 15px 7px 7px;
+        background: url('../images/icon/cancel-button.png');
+        background-size: 12px;
+        background-color: #f2cb89;
+        background-repeat: no-repeat;
+        background-position: 97% 50%;
+    }
+}
+.title{
+    font-size: 30px;
+}
+.p-30{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+footer{
+    text-align: center;
+    min-height: 70px;
+    background-color: black;
+    color: white;
+    padding: 20px;
+}

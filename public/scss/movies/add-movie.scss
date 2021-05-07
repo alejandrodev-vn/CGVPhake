@@ -1,0 +1,21 @@
+.add-movie-wrapper{
+    background: beige;
+    h2{
+        text-align: center;
+        padding: 20px 0;
+        font-size: 40px;
+    }
+    form{
+        width: 100%;
+        margin: 0 auto;
+        label{
+            font-weight: bold;
+        }
+        input[type="checkbox"]{
+            appearance: none;
+        }
+        .poster-edit{
+                width: 150px;   
+        }
+    }
+}

@@ -1,0 +1,28 @@
+/*--- default --- */
+@import 'variables.scss';
+@import 'elements.scss';
+@import 'reset.scss';
+@import 'gridlayout.scss';
+@import 'button.scss';
+/*--- default --- */
+/*--- header --- */
+@import 'header.scss';
+/*--- header --- */
+/*--- home --- */
+@import 'home/home.scss';
+/*--- home --- */
+/*--- movies --- */
+@import 'movies/movies-wrapper.scss';
+@import 'movies/add-movie.scss';
+@import 'movies/movie-detail.scss';
+/*--- movies --- */
+/*--- cinemas --- */
+@import 'cinemas/site.scss';
+/*--- cinemas --- */
+/*--- booking --- */
+@import 'booking/site.scss';
+/*--- booking --- */
+/*--- auth --- */
+@import 'auth/formAuth.scss';
+@import 'auth/profile.scss';
+/*--- auth --- */

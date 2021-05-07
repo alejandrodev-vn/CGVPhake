@@ -1,0 +1,163 @@
+<div class="top"></div>
+<section class="cinemas-wrapper">
+    <h1 class="p-30 text-center">Chọn khu vực</h1>
+    <div class="container-fluid">
+        <div class="row">
+            <ul class="cinemas-area">
+                <% for (let area of areas){ %> 
+                <li><span id="<%= area.slug %>"><%= area.nameArea %></span></li>
+                <% } %> 
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <h1 class="p-30 text-center col-md-12" id="titleCinema" style="display: none;" >Chọn Rạp</h1>
+        <div class="row">
+            <ul class="cinemas-list" id="cinemaList" style="display: none;">
+                <% for (let cinema of cinemas){ %> 
+                    <li class="<%= cinema.nameArea %>"><span id="<%= cinema._id %> "><%= cinema.nameCinema %> </span></li>
+                <% } %> 
+            </ul>
+        </div>
+    </div>
+    <div class="container"> 
+        <div class="row">
+            <div class="theater-container">
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+     
+		$(window).load(function(){			
+			$('.cinemas-area li').click(function() {
+                $('#titleCinema').css("display","block")
+                $('#cinemaList').css("display","flex")
+				$('.cinemas-list li').hide();
+				$('.cinemas-list li').removeClass('current');
+				$('.theater-container').html('');//remove content
+				// Current area
+				var area = $(this).find('span').attr('id');
+				$('.cinemas-area li span').parent().removeClass('siteactive');
+				$('.cinemas-area li span#'+area).parent().addClass('siteactive');
+				$('.cinemas-list .'+area).show();
+            });
+			$('.cinemas-list li').click(function(event){
+                event.preventDefault();
+                var cinema = $(this).find('span').attr('id');
+                var url = `/cinemas/${cinema}`;
+                $('#cinemaList li').removeClass('current');
+                $(this).addClass('current');
+                // history.pushState({}, '',url);
+                render(url); 
+            });
+            function render(url){
+                // console.log(url)
+                    $.ajax({    
+                        url: url,
+                        type: 'POST',
+                        beforeSend: function(){
+                            $('.theater-container').empty();
+                        }
+                    }).done(function(result) {	
+							var html = '';
+							if(typeof result == "object"){
+								result.forEach(info => {
+								html+= `<div class="single-movie">
+										<a href="/movies/${info.slug}" class="single-movie__title">Tên phim: ${info.title}</a>
+										<div class="single-movie__content">
+											<div class="left">
+												<a href="/movies/${info.slug}"><img src="../../images/movies/${info.imageUrl}" alt="${info.slug}"></a>
+											</div>
+											<div class="right">
+												<p class="day">Ngày: ${info.dateShowing}</p>
+												<a href="/booking/${info.room}/${info.id}" class="time">${info.startTime}-${info.endTime}</a>
+											</div>
+										</div>
+									</div>`;
+                            	});
+							}else html+= result;
+							console.log(result)
+                            if(html===0){
+                                location.reload(false)
+                            }
+                            $('div.theater-container').html(html)
+                        })
+                 
+                }
+		});
+		
+	
+		function showtimestabs(clss) {
+			$('.'+clss).each(function () {
+				var wrapper = $(this);
+
+				var hasTabs = wrapper.hasClass('tabs');
+				var hasAccordion = wrapper.hasClass('accordion');
+				var startOpen = wrapper.hasClass('open');
+
+				var dl = wrapper.children('dl:first');
+				var dts = dl.children('dt');
+				var panes = dl.children('dd');
+				var groups = new Array(dts, panes);
+
+				//Create a ul for tabs if necessary.
+				// $j('.toggle-tabs').remove();//remove to stop inserting duplicatedly
+				if (hasTabs) {
+					var ul = $('<ul class="toggle-tabs"></ul>');
+					dts.each(function () {
+						var dt = $(this);
+						var li = $('<li></li>');
+						li.html(dt.html());
+						ul.append(li);
+					});
+					ul.insertBefore(dl);
+					var lis = ul.children();
+					groups.push(lis);
+				}
+
+				//Add "last" classes.
+				var i;
+				for (i = 0; i < groups.length; i++) {
+					groups[i].filter(':last').addClass('last');
+				}
+
+				function toggleClasses(clickedItem, group) {
+					var index = group.index(clickedItem);
+					var i;
+					for (i = 0; i < groups.length; i++) {
+						groups[i].removeClass('current');
+						groups[i].eq(index).addClass('current');
+					}
+				}
+
+				//Toggle on tab (dt) click.
+				dts.on('click', function (e) {
+					//They clicked the current dt to close it. Restore the wrapper to unclicked state.
+					if ($(this).hasClass('current') && wrapper.hasClass('accordion-open')) {
+						wrapper.removeClass('accordion-open');
+					} else {
+						//They're clicking something new. Reflect the explicit user interaction.
+						wrapper.addClass('accordion-open');
+					}
+					toggleClasses($(this), dts);
+				});
+
+				//Toggle on tab (li) click.
+				if (hasTabs) {
+					lis.on('click', function (e) {
+						toggleClasses($(this), lis);
+					});
+					//Open the first tab.
+					lis.eq(0).trigger('click');
+				}
+
+				//Open the first accordion if desired.
+				if (startOpen) {
+					dts.eq(0).trigger('click');
+				}
+
+			});
+		}
+	
+</script>

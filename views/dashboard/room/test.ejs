@@ -1,0 +1,60 @@
+<div class="top"></div>
+<section class="booking-wrapper">
+    <h2>Booking Online</h2>
+  |
+     <!-- seat layout -->
+     <div class="seatStructure text-center">
+        <div class="screen">
+            <img src="../../images/icon/screen.svg" alt="screen">
+        </div>
+        <table id="seatsBlock">
+            <p id="notification"></p>
+            <tr>
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td></td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+            </tr>
+            <tr id="seats-area">
+                <script>
+                    var seats = [24,72,12];
+                    var {seatsNormal, seatsVip, seatsSweetbox} = seats
+                    let html =''
+                    console.log(seatsNormal)
+                    for(var i=0; i<=seatsNormal; i++){
+                        html+= ` <td>
+                        <label for="A1" class="seats seat-standard">A1<input type="checkbox"  id="A1" onclick="addchk('A1')"></label>
+                     </td>`
+                     document.getElementById("seats-area").innerHTML = html
+                    }
+                </script>
+                  
+            </tr>
+        </table>
+          <!-- seat availabilty list -->
+          <ul class="seat-note">
+            <li class="smallBox greenBox">Ghế thường</li>
+
+            <li class="smallBox redBox">Ghế Vip</li>
+
+            <li class="smallBox sweetBox">Sweetbox</li>
+
+            <li class="smallBox selectedBox">Ghế đã chọn</li>
+
+            <li class="smallBox noneBox">Ghế không thể chọn</li>
+
+        </ul>
+        <!-- seat availabilty list -->
+      
+    </div>
+</section>

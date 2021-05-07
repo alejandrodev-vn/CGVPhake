@@ -1,0 +1,70 @@
+<div class="top"></div>
+<section class="profile-wrapper p-30">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="profile-left">
+                    
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="profile-right">
+                    <form action="/auth/<%= locals.user.id %> " method="POST" class="formAuth">
+                        <h1 class="p-30">Thông tin tài khoản</h1>
+                        <div class="form-group">
+                            <label for="fullname" class="input-group-text col-md-2">Họ tên:</label>
+                            <input type="text" name="fullname" id="fullname" class="form-control" value="<%= locals.user.fullname %> ">
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="input-group-text col-md-2">Email:</label>
+                            <input style="background-color: #eee;" type="text" name="email" disabled id="email" class="form-control" value="<%= locals.user.email %> ">
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumber" class="input-group-text col-md-2">Số điện thoại:</label>
+                            <input type="text" name="phoneNumber" id="phoneNumber" class="form-control" value="<%= locals.user.phoneNumber %>">
+                        </div>
+                        <div class="form-group">
+                            <label for="birthday" class="input-group-text col-md-2">Ngày sinh:</label>
+                            <input type="date" name="birthday" id="birthday" class="form-control" value="<%= locals.user.birthday %>">
+                        </div>
+                        <div class="form-group">
+                            <label class="input-group-text col-md-2">Giới tính:</label>
+                           <label for="male" style="width: 40px;height: 30px;">Nam</label><input type="radio" name="sex" id="male" value="Nam" <%= (locals.user.sex == 'Nam') ? 'checked' : '' %> >
+                           <label for="female" style="width: 40px;height: 30px;">Nữ</label><input type="radio" name="sex" id="sex-signup" id="female" value="Nữ" <%= (locals.user.sex == 'Nữ') ? 'checked' : '' %> >
+
+                        </div>
+                        <div class="form-group">
+                            <label for="favourite" class="input-group-text col-md-2">Sở thích:</label>
+                            <input type="text" name="favourite" id="favourite" class="form-control" value="<%= locals.user.favourite %> ">
+                        </div>
+                        <div class="form-group">
+                            <label for="city" class="input-group-text col-md-2">Thành phố:</label>
+                            <input type="text" name="city" id="city" class="form-control" value="<%= locals.user.city %> ">
+                        </div>
+                        <div class="form-group">
+                            <input type="checkbox" name="change_password" id="change_password">
+                            <label for="change_password">Tôi muốn thay đổi mật khẩu:</label>
+                        </div>
+                        <div id="change_password-wrapper">
+                            <div class="form-group" >
+                                <label for="password-old" class="input-group-text">Mật khẩu cũ:</label>
+                                <input type="password" name="passwordOld" id="password-old" class="form-control">
+                                <label for="password-new" class="input-group-text">Mật khẩu mới:</label>
+                                <input type="password" name="passwordNew" id="password-new" class="form-control">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn"><span>Cập nhật</span></button>
+                        <input type="hidden" name="id" value="<%= locals.user.id %>">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    const change_password = document.getElementById("change_password")
+    const cpw = document.getElementById("change_password-wrapper")
+    change_password.addEventListener("click",()=>{
+        (change_password.checked == true) ? (cpw.style.display = "block") : (cpw.style.display = "none")
+    })
+</script>

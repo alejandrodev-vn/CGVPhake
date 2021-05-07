@@ -1,0 +1,87 @@
+<section class="hero">
+    <div class="hero__background">
+    </div>
+    <div class="hero__content">
+        <div class="container">
+            <div class="row">
+                <div class="box">
+                    <span class="border"></span>
+                    <span class="border"></span>
+                    <span class="border"></span>
+                    <span class="border"></span>
+                    <h1>Các phim nổi bật</h1>
+                    <a class="btn" href="/movies"><span>ĐẶT VÉ NGAY</span></a>  
+                </div>  
+            </div>
+        </div>
+    </div>   
+</section>
+<section class="section1">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 p-30">
+                <h3 class="title">THỂ LOẠI PHIM</h3>
+            </div>
+        </div>
+        <div class="row">
+            <% categories.forEach(e => { %> 
+            <div class="col-md-3"> 
+                <div class="single-place">
+                    <div class="single-place__left">
+                        <a href="#"><img src="images/logo/cgvlogo.png" alt="movie"></a> 
+                    </div>
+                    <div class="single-place__right">
+                        <h4><a href="movies/category/<%= e.value %>">Phim <%= e.title %> </a></h4>
+                    </div>
+                </div>
+            </div>
+            <% }); %> 
+        </div>
+    </div>
+</section>
+
+<section class="movies-wrapper">
+    <div class="container">
+    <h2 class="title p-30"><a href="" class="active"> Tất cả phim</a></h2>
+        <div class="row">
+            <% for (let movie of movies){ 
+                let getNameCategory = [];
+                let temp = movie.categories
+                for (let category of categories){
+                    temp.forEach(e => {
+                        if(e == category.value){
+                        getNameCategory.push(category.title)
+                    }
+                    });  
+                }
+             %>
+            <div class="col-md-3">
+                <div class="single-movie">
+                    <div class="single-movie__img">
+                        <a href="movies/<%= movie.slug %>">
+                            <img src="images/movies/<%= movie.imageUrl %>" alt="Movie">
+                        </a>
+                    </div>
+                    <a class="single-movie__title" href="movies/<%= movie.slug %> ">
+                        <%= movie.title %>
+                    </a>
+                    <div class="single-movie__info">
+                        <span class="single-movie__info--bold">Thể loại: </span>
+                        <span class="single-movie__info--normal"><%= getNameCategory %></span>
+                    </div>
+                    <div class="single-movie__info">
+                        <span class="single-movie__info--bold">Thời lượng: </span>
+                        <span class="single-movie__info--normal"><%= movie.time %> phút</span>
+                    </div>
+                    <div class="single-movie__info">
+                        <span class="single-movie__info--bold">Khởi chiếu: </span>
+                        <span class="single-movie__info--normal">
+                            <%= movie.premiere.getDate() %>/<%= movie.premiere.getMonth()+1 %>/<%= movie.premiere.getFullYear() %>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,55 @@
+<div class="top"></div>
+<section class="view-movie-wrapper p-30">
+    <div class="container">
+        <h2 class="title p-30">Nội dung phim</h2>
+        <div class="view-movie">
+            <div class="row">
+                <div class="col-md-3 col-sm-12">
+                    <div class="view-movie__img">
+                        <img src="../images/movies/<%= movie.imageUrl %> " alt="Movie">
+                    </div>
+                </div>
+                <div class="col-md-9 col-sm-12">
+                    <div class="view-movie__content">
+                        <h5 class="title" >
+                            <%= movie.title %> 
+                        </h5>
+                        <div class="info">
+                            <span class="info--bold">Trạng thái: </span>
+                            <span class="info--normal"><%= (movie.showhide==1) ? 'Còn chiếu' : 'Ngưng chiếu' %> </span>
+                        </div>
+                        <div class="info">
+                            <span class="info--bold">Thể loại: </span>
+                            <span class="info--normal"><%= getNameCategory %> </span>
+                        </div>
+                        <div class="info">
+                            <span class="info--bold">Đạo diễn: </span>
+                            <span class="info--normal"><%= movie.directors %> </span>
+                        </div>
+                        <div class="info">
+                            <span class="info--bold">Diễn viên: </span>
+                            <span class="info--normal"><%= movie.actors %> </span>
+                        </div>
+                        <div class="info">
+                            <span class="info--bold">Thời lượng: </span>
+                            <span class="info--normal"><%= movie.time %> phút</span>
+                        </div>
+                        <div class="info">
+                            <span class="info--bold">Khởi chiếu: </span>
+                            <span class="info--normal"><%= movie.premiere.getDate() %>/<%= movie.premiere.getMonth()+1 %>/<%= movie.premiere.getFullYear() %></span>
+                        </div>
+                        <div class="info">
+                            <span class="info--bold">Độ tuổi: </span>
+                            <span class="info--normal"><%= (movie.ageAllowed == 'Không') ? 'Không giới hạn' : movie.ageAllowed %></span>
+                        </div>
+                        <button type="button" class="btn-order"><span>Mua vé</span></button>
+                        <div class="info">
+                            <p class="info--description"><%= movie.description %></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--view movie-->
+    </div>
+</section>

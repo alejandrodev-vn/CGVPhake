@@ -1,0 +1,474 @@
+<div class="top"></div>
+<section class="booking-wrapper">
+    <h2>Booking Online</h2>
+    <div class="info-movieShowing">
+        <h6><%= cinema %> | <%= room %> | <%= movie.title %> </6>
+        <h6>Ngày: <%= dateShowing %> | Thời gian dự kiến: <%= movieShowing.startTime %> ~ <%= movieShowing.endTime %> </h6>
+    </div>
+     <!-- seat layout -->
+     <div class="seatStructure text-center">
+        <div class="screen">
+            <img src="../../images/icon/screen.svg" alt="screen">
+        </div>
+        <table id="seatsBlock">
+            <p id="notification"></p>
+            <tr>
+                <td></td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td></td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+                <td>10</td>
+                <td>11</td>
+                <td>12</td>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td>
+                   <label for="A1" class="seats seat-standard">A1<input type="checkbox"  id="A1" onclick="addchk('A1')"></label>
+                </td>
+                <td>
+                    <label for="A2" class="seats seat-standard">A2<input type="checkbox"   id="A2" onclick="addchk('A2')"></label>
+                </td>
+                <td>
+                    <label for="A3" class="seats seat-standard">A3<input type="checkbox"  id="A3"  onclick="addchk('A3')"></label>
+                </td>
+                <td>
+                    <label for="A4" class="seats seat-standard">A4<input type="checkbox"  id="A4"  onclick="addchk('A4')"></label>
+                </td>
+                <td>
+                    <label for="A5" class="seats seat-standard">A5<input type="checkbox"  id="A5"  onclick="addchk('A5')"></label>
+                </td>
+                <td class="seatGap"></td>
+                <td>
+                    <label for="A6" class="seats seat-standard">A6<input type="checkbox"  id="A6"  onclick="addchk('A6')"></label>
+                </td>
+                <td>
+                    <label for="A7" class="seats seat-standard">A7<input type="checkbox" id="A7"  id="A7"  onclick="addchk('A7')"></label>
+                </td>
+                <td>
+                    <label for="A8" class="seats seat-standard">A8<input type="checkbox"  id="A8"  onclick="addchk('A8')"></label>
+                </td>
+                <td>
+                    <label for="A9" class="seats seat-standard">A9<input type="checkbox"  id="A9"  onclick="addchk('A9')"></label>
+                </td>
+                <td>
+                    <label for="A10" class="seats seat-standard">A10<input type="checkbox"  id="A10"  onclick="addchk('A10')"></label>
+                </td>
+                <td>
+                    <label for="A11" class="seats seat-standard">A11<input type="checkbox"  id="A11"  onclick="addchk('A11')"></label>
+                </td>
+                <td>
+                    <label for="A12" class="seats seat-standard">A12<input type="checkbox"  id="A12"  onclick="addchk('A12')"></label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>B</td>
+                <td>
+                    <label for="B1" class="seats seat-standard">B1<input type="checkbox"  id="B1"  onclick="addchk('B1')"></label>
+                </td>
+                <td>
+                    <label for="B2" class="seats seat-standard">B2<input type="checkbox"  id="B2" onclick="addchk('B2')"></label>
+                </td>
+                <td>
+                    <label for="B3" class="seats seat-standard">B3<input type="checkbox"  id="B3"  onclick="addchk('A3')"></label>
+                </td>
+                <td>
+                    <label for="B4" class="seats seat-standard">B4<input type="checkbox"  id="B4"  onclick="addchk('B4')"></label>
+                </td>
+                <td>
+                    <label for="B5" class="seats seat-standard">B5<input type="checkbox"  id="B5"  onclick="addchk('B5')"></label>
+                </td>
+                <td></td>
+                <td>
+                    <label for="B6" class="seats seat-standard">B6<input type="checkbox"  id="B6"  onclick="addchk('B6')"></label>
+                </td>
+                <td>
+                    <label for="B7" class="seats seat-standard">B7<input type="checkbox"  id="B7"  onclick="addchk('B7')"></label>
+                </td>
+                <td>
+                    <label for="B8" class="seats seat-standard">B8<input type="checkbox"  id="B8"  onclick="addchk('B8')"></label>
+                </td>
+                <td>
+                    <label for="B9" class="seats seat-standard">B9<input type="checkbox"  id="B9"  onclick="addchk('B9')"></label>
+                </td>
+                <td>
+                    <label for="B10" class="seats seat-standard">B10<input type="checkbox"  id="B10"  onclick="addchk('B10')"></label>
+                </td>
+                <td>
+                    <label for="B11" class="seats seat-standard">B11<input type="checkbox"  id="B11"  onclick="addchk('B11')"></label>
+                </td>
+                <td>
+                    <label for="B12" class="seats seat-standard">B12<input type="checkbox"  id="B12"  onclick="addchk('B12')"></label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>C</td>
+                <td>
+                    <label for="C1" class="seats seat-standard">C1<input type="checkbox"  id="C1"  onclick="addchk('C1')"></label>
+                </td>
+                <td>
+                    <label for="C2" class="seats seat-standard">C2<input type="checkbox"  id="C2"  onclick="addchk('C2')"></label>
+                </td>
+                <td>
+                    <label for="C3" class="seats seat-standard">C3<input type="checkbox"  id="C3"  onclick="addchk('C3')"></label>
+                </td>
+                <td>
+                    <label for="C4" class="seats seat-standard">C4<input type="checkbox"  id="C4"  onclick="addchk('C4')"></label>
+                </td>
+                <td>
+                    <label for="C5" class="seats seat-standard">C5<input type="checkbox"  id="C5"  onclick="addchk('C5')"></label>
+                </td>
+                <td></td>
+                <td>
+                    <label for="C6" class="seats seat-standard">C6<input type="checkbox"  id="C6"  onclick="addchk('C6')"></label>
+                </td>
+                <td>
+                    <label for="C7" class="seats seat-standard">C7<input type="checkbox"  id="C7"  onclick="addchk('C7')"></label>
+                </td>
+                <td>
+                    <label for="C8" class="seats seat-standard">C8<input type="checkbox"  id="C8"  onclick="addchk('C8')"></label>
+                </td>
+                <td>
+                    <label for="C9" class="seats seat-standard">C9<input type="checkbox"  id="C9"  onclick="addchk('C9')"></label>
+                </td>
+                <td>
+                    <label for="C10" class="seats seat-standard">C10<input type="checkbox"  id="C10"  onclick="addchk('C10')"></label>
+                </td>
+                <td>
+                    <label for="C11" class="seats seat-standard">C11<input type="checkbox"  id="C11"  onclick="addchk('C11')"></label>
+                </td>
+                <td>
+                    <label for="C12" class="seats seat-standard">C12<input type="checkbox"  id="C12"  onclick="addchk('C12')"></label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>D</td>
+                <td>
+                    <label for="D1" class="seats seat-vipprime">D1<input type="checkbox"    onclick="addchk('D1')" id="D1"></label>
+                </td>
+                <td>
+                    <label for="D2" class="seats seat-vipprime">D2<input type="checkbox"   onclick="addchk('D2')" id="D2"></label>
+                </td>
+                <td>
+                    <label for="D3" class="seats seat-vipprime">D3<input type="checkbox"   onclick="addchk('D3')" id="D3"></label>
+                </td>
+                <td>
+                    <label for="D4" class="seats seat-vipprime">D4<input type="checkbox"   onclick="addchk('D4')" id="D4"></label>
+                </td>
+                <td>
+                    <label for="D5" class="seats seat-vipprime">D5<input type="checkbox"   onclick="addchk('D5')" id="D5"></label>
+                </td>
+                <td></td>
+                <td>
+                    <label for="D6" class="seats seat-vipprime">D6<input type="checkbox"   onclick="addchk('D6')" id="D6"></label>
+                </td>
+                <td>
+                    <label for="D7" class="seats seat-vipprime">D7<input type="checkbox"   onclick="addchk('D7')" id="D7"></label>
+                </td>
+                <td>
+                    <label for="D8" class="seats seat-vipprime">D8<input type="checkbox"   onclick="addchk('D8')" id="D8"></label>
+                </td>
+                <td>
+                    <label for="D9" class="seats seat-vipprime">D9<input type="checkbox"   onclick="addchk('D9')" id="D9"></label>
+                </td>
+                <td>
+                    <label for="D10" class="seats seat-vipprime">D10<input type="checkbox"   onclick="addchk('D10')" id="D10"></label>
+                </td>
+                <td>
+                    <label for="D11" class="seats seat-vipprime">D11<input type="checkbox"   onclick="addchk('D11')" id="D11"></label>
+                </td>
+                <td>
+                    <label for="D12" class="seats seat-vipprime">D12<input type="checkbox"   onclick="addchk('D12')" id="D12"></label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>E</td>
+                <td>
+                    <label for="E1" class="seats seat-vipprime">E1<input type="checkbox"   onclick="addchk('E1')" id="E1"></label>
+                </td>
+                <td>
+                    <label for="E2" class="seats seat-vipprime">E2<input type="checkbox"   onclick="addchk('E2')" id="E2"></label>
+                </td>
+                <td>
+                    <label for="E3" class="seats seat-vipprime">E3<input type="checkbox"   onclick="addchk('E3')" id="E3"></label>
+                </td>
+                <td>
+                    <label for="E4" class="seats seat-vipprime">E4<input type="checkbox"   onclick="addchk('E4')" id="E4"></label>
+                </td>
+                <td>
+                    <label for="E5" class="seats seat-vipprime">E5<input type="checkbox"   onclick="addchk('E5')" id="E5"></label>
+                </td>
+                <td></td>
+                <td>
+                    <label for="E6" class="seats seat-vipprime">E6<input type="checkbox"   onclick="addchk('E6')" id="E6"></label>
+                </td>
+                <td>
+                    <label for="E7" class="seats seat-vipprime">E7<input type="checkbox"   onclick="addchk('E7')" id="E7"></label>
+                </td>
+                <td>
+                    <label for="E8" class="seats seat-vipprime">E8<input type="checkbox"   onclick="addchk('E8')" id="E8"></label>
+                </td>
+                <td>
+                    <label for="E9" class="seats seat-vipprime">E9<input type="checkbox"   onclick="addchk('E9')" id="E9"></label>
+                </td>
+                <td>
+                    <label for="E10" class="seats seat-vipprime">E10<input type="checkbox"   onclick="addchk('E10')" id="E10"></label>
+                </td>
+                <td>
+                    <label for="E11" class="seats seat-vipprime">E11<input type="checkbox"   onclick="addchk('E11')" id="E11"></label>
+                </td>
+                <td>
+                    <label for="E12" class="seats seat-vipprime">E12<input type="checkbox"   onclick="addchk('E12')" id="E12"></label>
+                </td>
+            </tr>
+
+            <tr class="seatVGap"></tr>
+
+            <tr>
+                <td>F</td>
+                <td>
+                    <label for="F1" class="seats seat-vipprime">F1<input type="checkbox"   onclick="addchk('F1')" id="F1"></label>
+                </td>
+                <td>
+                    <label for="F2" class="seats seat-vipprime">F2F<input type="checkbox"   onclick="addchk('F2')" id="F2"></label>
+                </td>
+                <td>
+                    <label for="F3" class="seats seat-vipprime">F3<input type="checkbox"   onclick="addchk('F3')" id="F3"></label>
+                </td>
+                <td>
+                    <label for="F4" class="seats seat-vipprime">F4<input type="checkbox"   onclick="addchk('F4')" id="F4"></label>
+                </td>
+                <td>
+                    <label for="F5" class="seats seat-vipprime">F5<input type="checkbox"   onclick="addchk('F5')" id="F5"></label>
+                </td>
+                <td></td>
+                <td>
+                    <label for="F6" class="seats seat-vipprime">F6<input type="checkbox"   onclick="addchk('F6')" id="F6"></label>
+                </td>
+                <td>
+                    <label for="F7" class="seats seat-vipprime">F7<input type="checkbox"   onclick="addchk('F7')" id="F7"></label>
+                </td>
+                <td>
+                    <label for="F8" class="seats seat-vipprime">F8<input type="checkbox"   onclick="addchk('F8')" id="F8"></label>
+                </td>
+                <td>
+                    <label for="F9" class="seats seat-vipprime">F9<input type="checkbox"   onclick="addchk('F9')" id="F9"></label>
+                </td>
+                <td>
+                    <label for="F10" class="seats seat-vipprime">F10<input type="checkbox"   onclick="addchk('F10')" id="F10"></label>
+                </td>
+                <td>
+                    <label for="F11" class="seats seat-vipprime">F11<input type="checkbox"   onclick="addchk('F11')" id="F11"></label>
+                </td>
+                <td>
+                    <label for="F12" class="seats seat-vipprime">F12<input type="checkbox"   onclick="addchk('F12')" id="F12"></label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>G</td>
+                <td>
+                    <label for="G1" class="seats seat-vipprime">G1<input type="checkbox"   onclick="addchk('G1')" id="G1"></label>
+                </td>
+                <td>
+                    <label for="G2" class="seats seat-vipprime">G2<input type="checkbox"   onclick="addchk('G2')" id="G2"></label>
+                </td>
+                <td>
+                    <label for="G3" class="seats seat-vipprime">G3<input type="checkbox"   onclick="addchk('G3')" id="G3"></label>
+                </td>
+                <td>
+                    <label for="G4" class="seats seat-vipprime">G4<input type="checkbox"   onclick="addchk('G4')" id="G4"></label>
+                </td>
+                <td>
+                    <label for="G5" class="seats seat-vipprime">G5<input type="checkbox"   onclick="addchk('G5')" id="G5"></label>
+                </td>
+                <td></td>
+                <td>
+                    <label for="G6" class="seats seat-vipprime">G6<input type="checkbox"   onclick="addchk('G6')" id="G6"></label>
+                </td>
+                <td>
+                    <label for="G7" class="seats seat-vipprime">G7<input type="checkbox"   onclick="addchk('G7')" id="G7"></label>
+                </td>
+                <td>
+                    <label for="G8" class="seats seat-vipprime">G8<input type="checkbox"   onclick="addchk('G8')" id="G8"></label>
+                </td>
+                <td>
+                    <label for="G9" class="seats seat-vipprime">G9<input type="checkbox"   onclick="addchk('G9')" id="G9"></label>
+                </td>
+                <td>
+                    <label for="G10" class="seats seat-vipprime">G10<input type="checkbox"   onclick="addchk('G10')" id="G10"></label>
+                </td>
+                <td>
+                    <label for="G11" class="seats seat-vipprime">G11<input type="checkbox"   onclick="addchk('G11')" id="G11"></label>
+                </td>
+                <td>
+                    <label for="G12" class="seats seat-vipprime">G12<input type="checkbox"   onclick="addchk('G12')" id="G12"></label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>H</td>
+                <td>
+                    <label for="H1" class="seats seat-vipprime">H1<input type="checkbox"   onclick="addchk('H1')" id="H1"></label>
+                </td>
+                <td>
+                    <label for="H2" class="seats seat-vipprime">H2<input type="checkbox"   onclick="addchk('H2')" id="H2"></label>
+                </td>
+                <td>
+                    <label for="H3" class="seats seat-vipprime">H3<input type="checkbox"   onclick="addchk('H3')" id="H3"></label>
+                </td>
+                <td>
+                    <label for="H4" class="seats seat-vipprime">H4<input type="checkbox"   onclick="addchk('H4')" id="H4"></label>
+                </td>
+                <td>
+                    <label for="H5" class="seats seat-vipprime">H5<input type="checkbox"   onclick="addchk('H5')" id="H5"></label>
+                </td>
+                <td></td>
+                <td>
+                    <label for="H6" class="seats seat-vipprime">H6<input type="checkbox"   onclick="addchk('H6')" id="H6"></label>
+                </td>
+                <td>
+                    <label for="H7" class="seats seat-vipprime">H7<input type="checkbox"   onclick="addchk('H7')" id="H7"></label>
+                </td>
+                <td>
+                    <label for="H8" class="seats seat-vipprime">H8<input type="checkbox"   onclick="addchk('H8')" id="H8"></label>
+                </td>
+                <td>
+                    <label for="H9" class="seats seat-vipprime">H9<input type="checkbox"   onclick="addchk('H9')" id="H9"></label>
+                </td>
+                <td>
+                    <label for="H10" class="seats seat-vipprime">H10<input type="checkbox"   onclick="addchk('H10')" id="H10"></label>
+                </td>
+                <td>
+                    <label for="H11" class="seats seat-vipprime">H11<input type="checkbox"   onclick="addchk('H11')" id="H11"></label>
+                </td>
+                <td>
+                    <label for="H12" class="seats seat-vipprime">H12<input type="checkbox"   onclick="addchk('H12')" id="H12"></label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>I</td>
+                <td>
+                    <label for="I1" class="seats seat-vipprime">I1<input type="checkbox"   onclick="addchk('I1')" id="I1"></label>
+                </td>
+                <td>
+                    <label for="I2" class="seats seat-vipprime">I2<input type="checkbox"   onclick="addchk('I2')" id="I2"></label>
+                </td>
+                <td>
+                    <label for="I3" class="seats seat-vipprime">I3<input type="checkbox"  id="I3"  onclick="addchk('I3')"></label>
+                </td>
+                <td>
+                    <label for="I4" class="seats seat-vipprime">I4<input type="checkbox"  id="I4"  onclick="addchk('I4')"></label>
+                </td>
+                <td>
+                    <label for="I5" class="seats seat-vipprime">I5<input type="checkbox"  id="I5"  onclick="addchk('I5')"></label>
+                </td>
+                <td></td>
+                <td>
+                    <label for="I6" class="seats seat-vipprime">I6<input type="checkbox"  id="I6"  onclick="addchk('I6')"></label>
+                </td>
+                <td>
+                    <label for="I7" class="seats seat-vipprime">I7<input type="checkbox"  id="I7"  onclick="addchk('I7')"></label>
+                </td>
+                <td>
+                    <label for="I8" class="seats seat-vipprime">I8<input type="checkbox"  id="I8"  onclick="addchk('I8')"></label>
+                </td>
+                <td>
+                    <label for="I9" class="seats seat-vipprime">I9<input type="checkbox"  id="I9"  onclick="addchk('I9')"></label>
+                </td>
+                <td>
+                    <label for="I10" class="seats seat-vipprime">I10<input type="checkbox"  id="I10"  onclick="addchk('I10')"></label>
+                </td>
+                <td>
+                    <label for="I11" class="seats seat-vipprime">I11<input type="checkbox"  id="I11"  onclick="addchk('I11')"></label>
+                </td>
+                <td>
+                    <label for="I12" class="seats seat-vipprime">I12<input type="checkbox"  id="I12"  onclick="addchk('I12')"></label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>J</td>
+                <td>
+                    <label for="J1" class="seats seat-sweetbox">J1<input type="checkbox"  id="J1"  onclick="addchk('J1')"></label>
+                </td>
+                <td>
+                    <label for="J2" class="seats seat-sweetbox">J2<input type="checkbox"  id="J2"  onclick="addchk('J2')"></label>
+                </td>
+                <td>
+                    <label for="J3" class="seats seat-sweetbox">J3<input type="checkbox"  id="J3"  onclick="addchk('J3')"></label>
+                </td>
+                <td>
+                    <label for="J4" class="seats seat-sweetbox">J4<input type="checkbox"  id="J4"  onclick="addchk('J4')"></label>
+                </td>
+                <td>
+                    <label for="J5" class="seats seat-sweetbox">J5<input type="checkbox"  id="J5"  onclick="addchk('J5')"></label>
+                </td>
+                <td></td>
+                <td>
+                    <label for="J6" class="seats seat-sweetbox">J6<input type="checkbox"  id="J6"  onclick="addchk('J6')"></label>
+                </td>
+                <td>
+                    <label for="J7" class="seats seat-sweetbox">J7<input type="checkbox"  id="J7"  onclick="addchk('J7')"></label>
+                </td>
+                <td>
+                    <label for="J8" class="seats seat-sweetbox">J8<input type="checkbox"  id="J8"  onclick="addchk('J8')"></label>
+                </td>
+                <td>
+                    <label for="J9" class="seats seat-sweetbox">J9<input type="checkbox"  id="J9"  onclick="addchk('J9')"></label>
+                </td>
+                <td>
+                    <label for="J10" class="seats seat-sweetbox">J10<input type="checkbox"  id="J10"  onclick="addchk('J10')"></label>
+                </td>
+                <td>
+                    <label for="J11" class="seats seat-sweetbox">J11<input type="checkbox"  id="J11"  onclick="addchk('J11')"></label>
+                </td>
+                <td>
+                    <label for="J12" class="seats seat-sweetbox">J12<input type="checkbox"  id="J12"  onclick="addchk('J12')"></label>
+                </td>
+            </tr>
+        </table>
+          <!-- seat availabilty list -->
+          <ul class="seat-note">
+            <li class="smallBox greenBox">Ghế thường</li>
+
+            <li class="smallBox redBox">Ghế Vip</li>
+
+            <li class="smallBox sweetBox">Sweetbox</li>
+
+            <li class="smallBox selectedBox">Ghế đã chọn</li>
+
+            <li class="smallBox noneBox">Ghế không thể chọn</li>
+
+        </ul>
+        <!-- seat availabilty list -->
+        <div class="tickets">
+            <a href="/cinemas" class="btn"><span><i class="fas fa-arrow-left"></i> Quay lại</span></a>
+            <div class="poster">
+                <img src="../../images/movies/<%= movie.imageUrl %>" alt="<%= movie.slug %>">
+            </div>
+            <p class="info-movie"><%= movie.title %> <br> <small>Giới hạn tuổi: <%= movie.ageAllowed.substr(0,5) %> </small> </p>
+            <div class="info-movie-showing">
+                <p>Rạp: <%= cinema %> </p>
+                <p>Suất: <%= movieShowing.startTime %>, <%= dateShowing %>  </p>
+                <p>Phòng chiếu: <%= room %> </p>
+            </div>
+            <div class="total" id="total">
+                <p>Tổng: 0,00đ</p>
+            </div>
+            <a href="#" class="btn"><span>Thanh toán <i class="fas fa-arrow-right"></i></span></a>
+        </div>
+    </div>
+</section>

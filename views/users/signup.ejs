@@ -1,0 +1,79 @@
+<div class="top"></div>
+<section class="authentication-wrapper p-30">
+    <div class="container">
+        <div class="row">
+            <div class="form-area">
+                <div class="slide-form">
+                    <form action="/auth/signup" method="POST" id="formSignup" class="formAuth">
+                        <h1 class="text-center">Đăng ký</h1>
+                        <div class="form-group">
+                            <label for="fullname-signup">Họ tên:</label>
+                            <input type="text" name="fullname" id="fullname-signup" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="birthday-signup">Ngày sinh:</label>
+                            <input type="date" name="birthday" id="birthday-signup" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email-signup">Email:</label>
+                            <input type="text" name="email" id="email-signup" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="username-signup">Tài khoản:</label>
+                            <input type="text" name="username" id="username-signup" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password-signup">Mật khẩu:</label>
+                            <input type="password" name="password" id="password-signup" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumber-signup">Số điện thoại:</label>
+                            <input type="text" name="phoneNumber" id="phoneNumber-signup" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="city-signup">Thành phố:</label>
+                            <input type="text" name="city" id="city-signup" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="favourite-signup">Sở thích:</label>
+                            <input type="text" name="favourite" id="favourite-signup" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Giới tính:</label>
+                           <label for="male" style="width: 40px;height: 30px;">Nam</label><input type="radio" name="sex" id="male" value="Nam" >
+                           <label for="female" style="width: 40px;height: 30px;">Nữ</label><input type="radio" name="sex" id="sex-signup" id="female" value="Nữ" >
+
+                        </div>
+                        <button type="submit" class="btn"><span>Đăng ký</span></button>
+                        <span id="toLogin" class="nextForm">Bạn đã có tài khoản? Đăng nhập</span>
+                    </form>
+                    <form action="/auth/login" method="POST" id="formLogin" class="formAuth">
+                        <h1 class="text-center">Đăng nhập</h1>
+                        <div class="form-group">
+                            <label for="username-login">Tài khoản:</label>
+                            <input type="text" name="username" id="username-login" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="password-login">Mật khẩu:</label>
+                            <input type="password" name="password" id="password-login" class="form-control">
+                        </div>
+                        <button type="submit" class="btn"><span>Đăng nhập</span></button>
+                        <span id="toSignup" class="nextForm">Bạn chưa có tài khoản? Đăng ký</span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    const login = document.getElementById("toLogin")
+    const signup = document.getElementById("toSignup")
+    const slide = document.querySelector('.slide-form')
+
+    login.addEventListener("click",function(){
+        slide.style.transform = "translateX(-550px)"
+    })
+    signup.addEventListener("click",function(){
+        slide.style.transform = "translateX(0)"
+    })
+</script>

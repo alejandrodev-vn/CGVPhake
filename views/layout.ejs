@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/a00b7d7856.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>   
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <aside class="aside__top">
+        <a href="https://ncov.moh.gov.vn/vi/web/guest/-/6851640-2" class="text-center">Nhận thông tin mới nhất về biện pháp ứng phó COVID-19 của chúng tôi</a>  
+    </aside>
+     <header id="navbar">
+        <div class="container">
+            <div class="row bar">
+                <div class="logo" id="logo">
+                   <a href="/"><img src="../../images/logo/cgvlogo.png" alt="Logo"></a> 
+                </div>
+                <div class="mid">
+                    <ul class="mid__menu">
+                        <li><a href="/movies">Phim</a></li>
+                        <li><a href="/cinemas">Rạp</a></li>
+                        <li><a href="/auth/login">Thành viên</a></li>
+                     </ul>
+                    <form action="/movies/search" method="GET">
+                        <div class="mid__search">
+                            <div class="row">
+                                <div class="col-md-4 option-wrap"> <button type="button" id="typeOfMovie"><span> Chọn thể loại <i class="fas fa-chevron-down"></i></span></button>
+                                    <div class="search-option" id="searchOption">
+                                        <label><input type="checkbox" value="0"><span>Tất cả</span></label>
+                                        <ul>
+                                            <li><label><input type="checkbox" value="1"><span>Phim Hài</span></label></li>
+                                            <li><label><input type="checkbox" value="2"><span>Phim Hành động</span></label></li>
+                                            <li><label><input type="checkbox" value="3"><span>Phim Tâm lý</span></label></li>
+                                            <li><label><input type="checkbox" value="4"><span>Phim Tình cảm</span></label></li>
+                                            <li><label><input type="checkbox" value="5"><span>Phim Tài liệu</span></label></li>
+                                            <li><label><input type="checkbox" value="6"><span>Phim Khoa học viễn tưởng</span></label></li>
+                                        </ul> 
+                                    </div> 
+                                </div>
+                                <div class="col-md-6"><input type="text" id="searchTitle" name="q" autocomplete="on"></div>
+                                <span class="col-md-2 search"><button type="submit" class="btn-search"><i class="fas fa-search"></i></button></span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Vé của tôi</a></li>
+                        <li><a href="#"><i class="fas fa-globe-asia"></i></a></li>
+                        <div class="menu">
+                            <button class="navbar-toggler" id="navbarToggler" type="button">
+                                <div><i class="fas fa-bars"></i></div> 
+                                <div class="thumb-nail"><i class="fas fa-user-tie"></i></div> 
+                            </button>
+                            <div id="dropdown">
+                                <ul>
+                                    <% if(locals.user){ %>                     
+                                        <a class="dropdown__item" href="/auth/<%= user.id %>"><%= user.fullname %></a>
+                                        <% }else{ %> 
+                                        <a class="dropdown__item" href="/auth/login">Đăng nhập</a>
+                                        <a class="dropdown__item" href="/auth/signup">Đăng ký</a>
+                                        <% } %> 
+                                    <a class="dropdown__item" href="/movies">Phim</a>
+                                    <a class="dropdown__item" href="/cinemas">Rạp</a>
+                                    <a class="dropdown__item" href="/news">Tin tức & Sự kiện</a>
+                                </ul>
+                            </div>
+                        </div>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <%- body %>
+    <script>
+        $(function(){
+
+            $('#searchTitle').autocomplete({ 
+                source: function (req, res){
+
+                    $.ajax({
+                        url:"../../movies/autocomplete/",
+                        dataType:"jsonp",
+                        type:"GET",
+                        data:req,
+                        success: function(data){
+                            res(data)
+                        },
+                        error: function(err){
+                            console.log(err.status)
+                        }
+                    })
+                },
+                minLength: 1,
+                select: function(event, ui){
+                    if(ui.item){
+                        $('#searchTitle').text(ui.item.label)
+                    }
+                }
+            })
+        })
+
+       
+    </script>
+    <footer>Nguyen Tra Thanh Huy_Ps12133</footer> 
+    <script src="../../js/inits.js"></script>
+    <script src="../../js/main.js"></script>
+</body>
+</html>
